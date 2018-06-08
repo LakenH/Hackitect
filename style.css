@@ -1604,6 +1604,9 @@ td, th {
   border: 1px solid #00005150;
 
 }
+.menu ul li, .menu ul li a {
+  border: 1px solid #000051;
+}
 .menu ul li a {
   color: #fff;
   height: 100%;
