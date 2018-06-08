@@ -15,42 +15,8 @@ $featured_id = get_cat_ID('Featured Article');
   <h1 class="post__title"><?php the_title(); ?></h1>
   <div class="byline">
     <h3 class="post__author">
-      <?php if (function_exists(coauthors)) : ?>
-        <?php
-          $authors = get_coauthors($post->ID);
-          $authorPos = 0;
-        ?>
-        <?php echo get_avatar($authors[0], 64) ?>
-        By
-        <?php foreach ($authors as $author) : ?>
-          <?php $authorPos++; ?>
-          <?php if($author->user_url) : ?>
-            <a class="url" href="<?php echo $author->user_url; ?>" rel="external me"><?php echo hacks_author($author->display_name); ?></a><?php if($authorPos < count($authors)): ?>,<?php endif; ?>
-          <?php else : ?>
-            <a class="url" href="<?php echo get_author_posts_url($author->ID); ?>"><?php echo hacks_author($author->display_name); ?></a><?php if($authorPos < count($authors)): ?>,<?php endif; ?>
-          <?php endif; ?>
-        <?php endforeach; ?>
-      <?php else : /* if the plugin is disabled, fall back to single author */ ?>
-          <h3>About the Author</h3>
-          <div class="vcard">
-            <h4 class="fn">
-            <?php if (get_the_author_meta('user_url')) : ?>
-              <a class="url" rel="external me" href="<?php the_author_meta('user_url'); ?>"><?php the_author(); ?>
-              <?php if (function_exists('get_avatar')) : echo ('<span class="photo">'.get_avatar( get_the_author_meta('user_email'), 48 ).'</span>'); endif; ?>
-              </a>
-            <?php else : ?>
-              <a href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>"><?php the_author(); ?>
-              <?php if (function_exists('get_avatar')) : echo ('<span class="photo">'.get_avatar( get_the_author_meta('user_email'), 48 ).'</span>'); endif; ?>
-              </a>
-            <?php endif; ?>
-            </h4>
-            <?php if (get_the_author_meta('description')) : ?>
-            <p><?php the_author_meta('description'); ?></p>
-            <?php endif; ?>
-             <?php echo dw_get_author_meta(); ?>
-            <p><a class="url" href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>">More articles by <?php the_author(); ?>&hellip;</a></p>
-          </div>
-      <?php endif; ?>
+        <?php echo get_avatar( get_the_author_meta('user_email'), 64 ); ?>
+        By <a class="url" href="<?php the_author_meta('user_url'); ?>" rel="external me"><?php the_author(); ?></a>
     </h2>
     <div class="post__meta">
       Posted on
@@ -67,7 +33,6 @@ $featured_id = get_cat_ID('Featured Article');
           <?php edit_post_link('Edit Post', '', ''); ?>
         </span>
       <?php endif; ?>
-      <div class="socialshare" data-type="bubbles"></div>
     </div>
   </div>
 </div>
@@ -99,9 +64,6 @@ $featured_id = get_cat_ID('Featured Article');
       <?php endif; ?>
     </section>
   </article>
-  <section class="promo">
-    <?php get_template_part('newsletter'); ?>
-  </section>
   <?php comments_template(); ?>
 </main><!-- /#content-main -->
 
