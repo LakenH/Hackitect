@@ -31,7 +31,6 @@ $categories = array(
         <?php fc_custom_loop('posts_per_page=1&template=article-list'); ?>
       </ul>
     </div>
-    <?php get_template_part('newsletter'); ?>
   </div>
   <div class="row">
     <div class="block block--2">
