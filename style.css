@@ -749,6 +749,7 @@ td, th {
 }
 .branding__wordmark {
   width: 30%;
+  min-width: 250px;
   margin: 0 auto;
 }
 .branding__title {

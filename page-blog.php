@@ -1,23 +1,11 @@
 <?php get_header();
 $featured_id = get_cat_ID('Featured Article');
 $categories = array(
-  "Add-ons",
-  "Animations",
-  "Apps",
-  "Canvas",
-  "CSS",
-  "Developer Tools",
-  "Firefox",
-  "Firefox OS",
-  "Games",
-  "HTML5",
-  "Javascript",
-  "Mobile",
-  "Performance",
-  "Security",
-  "SVG",
-  "Video",
-  "WebGL"
+  "Accessibility",
+  "Extensions",
+  "Plugins",
+  "Themes",
+  "WordPress"
 );
 ?>
 
