@@ -1612,3 +1612,11 @@ footer {
   margin-top: auto;
   margin-bottom: 0;
 }
+.feature.section.section--fullwidth {
+
+  background: #CCC;
+
+}
+footer {
+  border-top: 5px solid #000051;
+}

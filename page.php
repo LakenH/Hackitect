@@ -4,11 +4,10 @@
 <main id="content-main" class="section">
   <?php if (have_posts()) : ?>
   <?php while (have_posts()) : the_post(); ?>
-    <div id="content-head">
+
+    <article class="post" id="post-<?php the_ID(); ?>" role="article">
       <h1 class="page-title"><?php the_title(); ?></h1>
       <?php if ( current_user_can( 'edit_page', $post->ID ) ) : ?><p class="edit"><?php edit_post_link('Edit Page', '', ''); ?></p><?php endif; ?>
-</div><!-- /#content-head -->
-    <article class="post" id="post-<?php the_ID(); ?>" role="article">
       <?php the_content('Read more&hellip;'); ?>
     </article>
 
